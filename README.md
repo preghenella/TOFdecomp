@@ -1,2 +1,2 @@
-# TOFdecomp
-TOF decoder/compressor for LHC run3
+# compressor
+TOF raw data compressor for LHC Run3.

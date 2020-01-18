@@ -1,4 +1,4 @@
-project(TOFdecomp)
+project(compressor)
 cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
 
 if(UNIX)
@@ -10,7 +10,12 @@ else()
     set(CMAKE_MACOSX_RPATH 1)
 endif()
 
-find_package(Boost REQUIRED COMPONENTS program_options)
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
+
+find_package(Boost REQUIRED COMPONENTS program_options thread)
+find_package(AliceO2 REQUIRED)
+
 include_directories(${Boost_INCLUDE_DIR})
+include_directories(${AliceO2_INCLUDE_DIR})
 
 add_subdirectory(src)
